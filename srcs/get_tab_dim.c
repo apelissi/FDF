@@ -6,11 +6,11 @@
 /*   By: apelissi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/28 13:31:14 by apelissi          #+#    #+#             */
-/*   Updated: 2018/10/01 00:18:34 by apelissi         ###   ########.fr       */
+/*   Updated: 2018/10/08 14:59:19 by apelissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FDF.h"
+#include "fdf.h"
 
 int			is_ok(char c)
 {
@@ -51,5 +51,9 @@ int			get_tab_dim(char *line, t_val *tv)
 	}
 	if (!j)
 		return (0);
+	ft_putnbr(tv->nb_y);
+	write(1, "  ", 2);
+	ft_putnbr(tv->nb_x);
+	write(1, "\n", 1);
 	return (1);
 }

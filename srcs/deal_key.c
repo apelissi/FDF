@@ -6,11 +6,11 @@
 /*   By: apelissi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 20:01:00 by apelissi          #+#    #+#             */
-/*   Updated: 2018/10/01 20:35:34 by apelissi         ###   ########.fr       */
+/*   Updated: 2018/10/01 21:06:44 by apelissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FDF.h"
+#include "fdf.h"
 
 int		deal_key(int keycode, t_val *tv)
 {

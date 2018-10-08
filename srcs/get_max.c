@@ -1,47 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afficher.c                                         :+:      :+:    :+:   */
+/*   get_max.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apelissi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/28 16:34:14 by apelissi          #+#    #+#             */
-/*   Updated: 2018/10/08 15:15:20 by apelissi         ###   ########.fr       */
+/*   Created: 2018/10/08 15:16:29 by apelissi          #+#    #+#             */
+/*   Updated: 2018/10/08 15:16:32 by apelissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_point	pt(int x, int y, int z)
+void	get_max(t_val *tv)
 {
-	t_point	a;
+	int	x;
+	int	y;
 
-	a.x = x;
-	a.y = y;
-	a.z = z;
-	return (a);
-}
-
-void	afficher(t_val *tv)
-{
-	int x;
-	int y;
-
-	get_max(tv);
 	y = 0;
 	while (y < tv->nb_y)
 	{
 		x = 0;
 		while (x < tv->nb_x)
 		{
-			if (x)
-				ft_link(pt(x, y, tv->tab[y][x]),
-						pt(x - 1, y, tv->tab[y][x - 1]), tv);
-			if (y)
-				ft_link(pt(x, y, tv->tab[y][x]),
-						pt(x, y - 1, tv->tab[y - 1][x]), tv);
+			if (tv->x_max < (x * tv->f) / (y + tv->f))
+				tv->x_max = (x * tv->f) / (y + tv->f);
+			if (tv->y_max < tv->h + ((tv->tab[y][x] - tv->z_min - tv->h)
+						* tv->f) / (y + tv->f))
+				tv->y_max = tv->h + ((tv->tab[y][x] - tv->z_min - tv->h)
+						* tv->f) / (y + tv->f);
+			if (tv->tab[y][x] > tv->nb_z)
+				tv->nb_z = tv->tab[y][x];
 			x++;
 		}
 		y++;
 	}
+	tv->m_x = tv->t_x / tv->x_max;
+	tv->m_y = tv->t_y / tv->y_max;
 }

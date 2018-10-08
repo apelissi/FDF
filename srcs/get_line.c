@@ -6,11 +6,11 @@
 /*   By: apelissi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/28 13:53:26 by apelissi          #+#    #+#             */
-/*   Updated: 2018/09/28 15:26:29 by apelissi         ###   ########.fr       */
+/*   Updated: 2018/10/01 21:05:56 by apelissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FDF.h"
+#include "fdf.h"
 
 char	*get_line(int fd)
 {
