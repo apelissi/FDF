@@ -6,7 +6,7 @@
 /*   By: apelissi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 20:43:03 by apelissi          #+#    #+#             */
-/*   Updated: 2018/10/08 15:14:33 by apelissi         ###   ########.fr       */
+/*   Updated: 2018/10/09 17:11:54 by apelissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct		s_val
 	float	m_y;
 	void	*ptr;
 	void	*fen;
+	void	*img;
+	int		*data;
 }					t_val;
 
 typedef struct		s_point
@@ -55,5 +57,7 @@ void				ft_link(t_point a, t_point b, t_val *tv);
 int					ft_mlx(t_val *tv);
 int					deal_key(int keycode, t_val *tv);
 void				get_max(t_val	*tv);
+void				set_pixel_img(t_val *tv, float x, float y, float color);
+int					ft_expose_hook(t_val *tv);
 
 #	endif

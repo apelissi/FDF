@@ -6,7 +6,7 @@
 /*   By: apelissi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 19:05:01 by apelissi          #+#    #+#             */
-/*   Updated: 2018/10/08 15:26:22 by apelissi         ###   ########.fr       */
+/*   Updated: 2018/10/10 11:46:01 by apelissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ void	ft_init(t_val *tv)
 	tv->h = tv->nb_y * 10;
 	tv->f = tv->h / 4;
 	tv->a = (int)hypot(tv->t_x / tv->nb_x, tv->t_y / tv->nb_y);
-	if (tv-> a < 20)
-		tv-> a = 100;
+	tv->a = tv->a * 2;
+	if (tv->a < 20)
+		tv->a = 20;
 }
 
 int		ft_mlx(t_val *tv)
@@ -31,7 +32,7 @@ int		ft_mlx(t_val *tv)
 	tv->fen = mlx_new_window(tv->ptr, tv->t_x,
 			tv->t_y, "fdf");
 	mlx_key_hook(tv->fen, deal_key, tv);
-	afficher(tv);
+	mlx_expose_hook(tv->fen, ft_expose_hook, tv);
 	mlx_loop(tv->ptr);
 	return (0);
 }

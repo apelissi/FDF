@@ -6,7 +6,7 @@
 #    By: apelissi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/01 17:22:28 by apelissi          #+#    #+#              #
-#    Updated: 2018/10/08 15:14:48 by apelissi         ###   ########.fr        #
+#    Updated: 2018/10/09 17:12:11 by apelissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ SRC_NAME =	main.c					\
 			get_tab_dim.c			\
 			ft_mlx.c				\
 			deal_key.c				\
-			get_max.c
+			get_max.c				\
+			set_pixel_img.c			\
+			ft_expose_hook.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

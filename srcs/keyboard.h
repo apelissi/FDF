@@ -6,7 +6,7 @@
 /*   By: apelissi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 20:38:56 by apelissi          #+#    #+#             */
-/*   Updated: 2018/10/01 20:42:21 by apelissi         ###   ########.fr       */
+/*   Updated: 2018/10/10 15:27:56 by apelissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 #define B 11
 #define C 8
 #define D 2
-#define E 4
+#define E 14
 #define F 3
-#define G 9
+#define G 5
 #define H 4
 #define I 34
 #define J 38
@@ -41,6 +41,9 @@
 #define X 7
 #define Y 16
 #define Z 6
+
+#define PL 69
+#define MI 78
 
 #define ONE 83
 #define TWO 84
